@@ -36,7 +36,7 @@ Visual Studio provides the native Microsoft C++ compiler and development environ
 
 1. Open **Visual Studio 2022**.
 2. Select **Open a local folder**.
-3. Navigate to the `packet_analyzer` project directory.
+3. Navigate to the `Deep_Packet_Inspection_Engine` project directory.
 4. Select the folder.
 5. Allow Visual Studio to scan the project files.
 
