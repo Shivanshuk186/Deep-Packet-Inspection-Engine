@@ -26,8 +26,7 @@ Visual Studio provides the native Microsoft C++ compiler and development environ
 2. Run the installer.
 
 3. When asked which workloads to install, select:
-
-   * ✅ **Desktop development with C++**
+   - ✅ **Desktop development with C++**
 
 4. Click **Install** and wait for the installation to complete.
 
@@ -353,8 +352,8 @@ Ctrl+Shift+X
 
 3. Install:
 
-* **C/C++** — Microsoft
-* **C/C++ Extension Pack** — Microsoft
+- **C/C++** — Microsoft
+- **C/C++ Extension Pack** — Microsoft
 
 ---
 
@@ -407,30 +406,32 @@ Others
 
 ```json
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Build DPI Engine",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "-std=c++17",
-                "-O2",
-                "-I", "include",
-                "-o", "dpi_engine.exe",
-                "src/dpi_mt.cpp",
-                "src/pcap_reader.cpp",
-                "src/packet_parser.cpp",
-                "src/sni_extractor.cpp",
-                "src/types.cpp"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": ["$gcc"]
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build DPI Engine",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-std=c++17",
+        "-O2",
+        "-I",
+        "include",
+        "-o",
+        "dpi_engine.exe",
+        "src/dpi_mt.cpp",
+        "src/pcap_reader.cpp",
+        "src/packet_parser.cpp",
+        "src/sni_extractor.cpp",
+        "src/types.cpp"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
 }
 ```
 
@@ -474,9 +475,9 @@ Then run:
 
 MinGW-w64 is either:
 
-* Not installed
-* Not added to PATH
-* Installed but the terminal has not been restarted
+- Not installed
+- Not added to PATH
+- Installed but the terminal has not been restarted
 
 ### Fix
 
@@ -606,9 +607,9 @@ Python must be installed and available through PATH.
 
 ### Possible Causes
 
-* The output file is currently open in another program.
-* The directory does not allow writing.
-* The selected output filename is already being used.
+- The output file is currently open in another program.
+- The directory does not allow writing.
+- The selected output filename is already being used.
 
 ### Fix
 
@@ -772,14 +773,14 @@ Choose Environment
 
 Before running the engine, verify:
 
-* [ ] C++17 compiler is installed
-* [ ] Project directory is correct
-* [ ] `include/` directory is available
-* [ ] Required `.cpp` files are present
-* [ ] `test_dpi.pcap` exists
-* [ ] `dpi_engine.exe` was generated successfully
-* [ ] Input PCAP can be opened
-* [ ] Output location is writable
+- [ ] C++17 compiler is installed
+- [ ] Project directory is correct
+- [ ] `include/` directory is available
+- [ ] Required `.cpp` files are present
+- [ ] `test_dpi.pcap` exists
+- [ ] `dpi_engine.exe` was generated successfully
+- [ ] Input PCAP can be opened
+- [ ] Output location is writable
 
 Basic test:
 

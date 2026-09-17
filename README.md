@@ -29,21 +29,21 @@ The project includes both a **single-threaded implementation** for straightforwa
 
 A traditional network filter may primarily use:
 
-* Source IP
-* Destination IP
-* Source port
-* Destination port
-* Transport protocol
+- Source IP
+- Destination IP
+- Source port
+- Destination port
+- Transport protocol
 
 A DPI system can inspect deeper protocol information to identify traffic characteristics and classify connections.
 
 ### Typical Uses
 
-* **Network monitoring** — Analyze traffic patterns and protocols
-* **Enterprise networking** — Apply application/domain-based traffic policies
-* **Security systems** — Detect suspicious or unwanted traffic
-* **Traffic management** — Classify and control network usage
-* **Research and education** — Study network protocols and packet processing
+- **Network monitoring** — Analyze traffic patterns and protocols
+- **Enterprise networking** — Apply application/domain-based traffic policies
+- **Security systems** — Detect suspicious or unwanted traffic
+- **Traffic management** — Classify and control network usage
+- **Research and education** — Study network protocols and packet processing
 
 ### What the DPI Engine Does
 
@@ -115,9 +115,9 @@ A typical Ethernet + IPv4 + TCP packet can be visualized as:
 
 The exact size of the IP and TCP headers can vary because optional fields may be present. The common minimum sizes are:
 
-* Ethernet header: **14 bytes**
-* IPv4 header: **20 bytes**
-* TCP header: **20 bytes**
+- Ethernet header: **14 bytes**
+- IPv4 header: **20 bytes**
+- TCP header: **20 bytes**
 
 ---
 
@@ -161,10 +161,10 @@ Five-Tuple
 
 This allows packets belonging to the same flow to share information such as:
 
-* Detected SNI
-* Application classification
-* Blocked state
-* Flow statistics
+- Detected SNI
+- Application classification
+- Blocked state
+- Flow statistics
 
 ---
 
@@ -586,9 +586,9 @@ if (rules.isBlocked(
 
 Rules can be based on:
 
-* Source IP
-* Application type
-* Domain/SNI
+- Source IP
+- Application type
+- Domain/SNI
 
 Example:
 
@@ -1229,12 +1229,12 @@ Coordinates the complete multi-threaded system.
 
 Responsibilities include:
 
-* Starting worker threads
-* Connecting queues
-* Configuring Load Balancers
-* Configuring Fast Paths
-* Coordinating shutdown
-* Managing processing flow
+- Starting worker threads
+- Connecting queues
+- Configuring Load Balancers
+- Configuring Fast Paths
+- Coordinating shutdown
+- Managing processing flow
 
 ---
 
@@ -1368,14 +1368,14 @@ SNIExtractor::extract(
 
 A robust DPI implementation should account for:
 
-* TCP segmentation
-* TCP stream reassembly
-* IP fragmentation
-* TLS variations
-* Missing SNI
-* Encrypted Client Hello (ECH)
-* QUIC/HTTP/3
-* IPv6
+- TCP segmentation
+- TCP stream reassembly
+- IP fragmentation
+- TLS variations
+- Missing SNI
+- Encrypted Client Hello (ECH)
+- QUIC/HTTP/3
+- IPv6
 
 The simplified parser should therefore be viewed as a protocol-analysis implementation rather than a universal HTTPS inspection mechanism.
 
@@ -1474,10 +1474,10 @@ Once the flow is classified as blocked, subsequent packets can be handled consis
 
 ## Prerequisites
 
-* **macOS/Linux**
-* **C++17-compatible compiler**
-* **g++** or **clang++**
-* Python 3 for generating test PCAP data
+- **macOS/Linux**
+- **C++17-compatible compiler**
+- **g++** or **clang++**
+- Python 3 for generating test PCAP data
 
 The C++ implementation does not require external C++ libraries.
 
@@ -1711,11 +1711,11 @@ The current parser focuses on IPv4.
 
 IPv6 support would require:
 
-* IPv6 header parsing
-* IPv6 address representation
-* Protocol dispatch
-* IPv6-aware flow keys
-* Updated rule handling
+- IPv6 header parsing
+- IPv6 address representation
+- Protocol dispatch
+- IPv6-aware flow keys
+- Updated rule handling
 
 ---
 
@@ -1742,10 +1742,10 @@ This makes application-layer inspection more reliable.
 
 For large captures or long-running systems, flow state can be bounded using mechanisms such as:
 
-* Idle timeouts
-* FIN/RST cleanup
-* LRU eviction
-* Maximum flow-table size
+- Idle timeouts
+- FIN/RST cleanup
+- LRU eviction
+- Maximum flow-table size
 
 ---
 
@@ -1823,48 +1823,48 @@ This project demonstrates practical implementation of:
 
 ### Networking
 
-* Ethernet frame parsing
-* IPv4 parsing
-* TCP/UDP parsing
-* TCP flow identification
-* Five-tuples
-* PCAP file format
-* Network byte order
+- Ethernet frame parsing
+- IPv4 parsing
+- TCP/UDP parsing
+- TCP flow identification
+- Five-tuples
+- PCAP file format
+- Network byte order
 
 ### Deep Packet Inspection
 
-* TLS Client Hello inspection
-* SNI extraction
-* HTTP Host extraction
-* Application signature matching
-* Domain-based classification
+- TLS Client Hello inspection
+- SNI extraction
+- HTTP Host extraction
+- Application signature matching
+- Domain-based classification
 
 ### Stateful Processing
 
-* Flow tables
-* Per-flow state
-* Flow-based blocking
-* Application classification state
+- Flow tables
+- Per-flow state
+- Flow-based blocking
+- Application classification state
 
 ### Concurrent Programming
 
-* `std::thread`
-* `std::mutex`
-* `std::lock_guard`
-* `std::unique_lock`
-* `std::condition_variable`
-* Producer-consumer queues
-* Multi-stage processing pipelines
-* Flow-aware packet distribution
+- `std::thread`
+- `std::mutex`
+- `std::lock_guard`
+- `std::unique_lock`
+- `std::condition_variable`
+- Producer-consumer queues
+- Multi-stage processing pipelines
+- Flow-aware packet distribution
 
 ### Systems Programming
 
-* Binary file I/O
-* Raw byte parsing
-* Protocol offsets
-* Network/host byte-order conversion
-* Hash-based routing
-* Concurrent data processing
+- Binary file I/O
+- Raw byte parsing
+- Protocol offsets
+- Network/host byte-order conversion
+- Hash-based routing
+- Concurrent data processing
 
 ---
 
@@ -1911,5 +1911,3 @@ Writer
 Flow-aware hashing ensures packets belonging to the same five-tuple can remain associated with the same processing worker, allowing flow state to be maintained locally while enabling parallel processing across independent flows.
 
 The project provides a practical demonstration of **network protocol parsing, deep packet inspection, flow tracking, signature-based traffic classification, stateful filtering, producer-consumer concurrency, and multi-threaded packet-processing architecture**.
-#   D e e p - P a c k e t - I n s p e c t i o n - E n g i n e  
- 
